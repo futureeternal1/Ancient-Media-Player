@@ -1,0 +1,132 @@
+package player.music.ancient.fragments.radio
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import player.music.ancient.db.RadioCategoryEntity
+import player.music.ancient.R
+import player.music.ancient.databinding.ItemRadioStationBinding
+import player.music.ancient.db.RadioStationEntity
+
+class RadioAdapter(
+    private val onClick: (RadioStationEntity) -> Unit,
+    private val onLongClick: (RadioStationEntity) -> Unit
+) : ListAdapter<RadioStationEntity, RadioAdapter.RadioViewHolder>(DiffCallback) {
+
+    private var currentPlayingUri: String? = null
+    private var categoryMap: Map<Long, RadioCategoryEntity> = emptyMap()
+
+    fun setCurrentPlayingUri(uri: String?) {
+        val oldUri = currentPlayingUri
+        currentPlayingUri = uri
+        if (oldUri != currentPlayingUri) {
+            notifyDataSetChanged() // Simplest for now, can be optimized if needed
+        }
+    }
+
+    fun submitCategories(categories: List<RadioCategoryEntity>) {
+        categoryMap = categories.associateBy { it.id }
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RadioViewHolder {
+        return RadioViewHolder(
+            ItemRadioStationBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: RadioViewHolder, position: Int) {
+        val station = getItem(position)
+        holder.bind(station, station.uri == currentPlayingUri)
+    }
+
+    inner class RadioViewHolder(private val binding: ItemRadioStationBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(station: RadioStationEntity, isPlaying: Boolean) {
+            binding.title.text = station.name
+            binding.text.text = station.uri
+
+            Glide.with(binding.image.context)
+                .load(station.imageUri)
+                .placeholder(R.drawable.ic_radio)
+                .error(R.drawable.ic_radio)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(binding.image)
+
+            val category = station.categoryId?.let(categoryMap::get)
+            if (category != null) {
+                binding.categoryContainer.visibility = View.VISIBLE
+                binding.categoryText.text = category.name
+                Glide.with(binding.categoryImage.context)
+                    .load(category.imageUri)
+                    .placeholder(R.drawable.ic_folder)
+                    .error(R.drawable.ic_folder)
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(binding.categoryImage)
+            } else {
+                binding.categoryContainer.visibility = View.GONE
+                binding.categoryImage.setImageResource(R.drawable.ic_folder)
+            }
+
+            if (isPlaying) {
+                binding.liveIndicator.visibility = View.VISIBLE
+                startLiveAnimation(binding.liveDot)
+            } else {
+                binding.liveIndicator.visibility = View.GONE
+                binding.liveDot.clearAnimation()
+            }
+
+            binding.root.setOnClickListener {
+                it.animate().scaleX(0.95f).scaleY(0.95f).setDuration(100).withEndAction {
+                    it.animate().scaleX(1f).scaleY(1f).setDuration(100).start()
+                    onClick(station)
+                }.start()
+            }
+            binding.menuButton.setOnClickListener {
+                onLongClick(station)
+            }
+            binding.root.setOnLongClickListener {
+                onLongClick(station)
+                true
+            }
+        }
+
+        private fun startLiveAnimation(view: View) {
+            val anim = AlphaAnimation(1.0f, 0.3f)
+            anim.duration = 800
+            anim.repeatMode = Animation.REVERSE
+            anim.repeatCount = Animation.INFINITE
+            view.startAnimation(anim)
+        }
+    }
+
+    companion object {
+        private val DiffCallback = object : DiffUtil.ItemCallback<RadioStationEntity>() {
+            override fun areItemsTheSame(
+                oldItem: RadioStationEntity,
+                newItem: RadioStationEntity
+            ): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(
+                oldItem: RadioStationEntity,
+                newItem: RadioStationEntity
+            ): Boolean {
+                return oldItem == newItem
+            }
+        }
+    }
+}

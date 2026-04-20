@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/history"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/history"
+            app:icon="@drawable/ic_history" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lastAdded"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/last_added"
+            app:icon="@drawable/ic_library_add" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/topPlayed"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/my_top_tracks"
+            app:icon="@drawable/ic_trending_up" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionShuffle"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/shuffle"
+            app:icon="@drawable/ic_shuffle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/chooseFolder"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/choose_folder"
+            app:icon="@drawable/ic_folder" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionRadio"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/radio"
+            app:icon="@drawable/ic_radio" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionTv"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/tv"
+            app:icon="@drawable/ic_tv" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionVideos"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/videos"
+            app:icon="@drawable/ic_video" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/actionYoutube"
+            style="@style/HomeActionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:layout_weight="1"
+            android:text="@string/youtube"
+            app:icon="@drawable/ic_youtube" />
+    </LinearLayout>
+</LinearLayout>

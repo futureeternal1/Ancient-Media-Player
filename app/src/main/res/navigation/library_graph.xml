@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/action_home">
+
+    <fragment
+        android:id="@+id/action_album"
+        android:name="player.music.ancient.fragments.albums.AlbumsFragment"
+        tools:layout="@layout/fragment_main_recycler" />
+
+    <fragment
+        android:id="@+id/action_artist"
+        android:name="player.music.ancient.fragments.artists.ArtistsFragment"
+        tools:layout="@layout/fragment_main_recycler" />
+
+    <fragment
+        android:id="@+id/action_song"
+        android:name="player.music.ancient.fragments.songs.SongsFragment"
+        tools:layout="@layout/fragment_main_recycler" />
+
+    <fragment
+        android:id="@+id/action_genre"
+        android:name="player.music.ancient.fragments.genres.GenresFragment"
+        tools:layout="@layout/fragment_main_recycler" />
+
+    <fragment
+        android:id="@+id/action_playlist"
+        android:name="player.music.ancient.fragments.playlists.PlaylistsFragment"
+        tools:layout="@layout/fragment_main_recycler" />
+
+    <fragment
+        android:id="@+id/action_folder"
+        android:name="player.music.ancient.fragments.folder.FoldersFragment"
+        tools:layout="@layout/fragment_folder" />
+
+    <fragment
+        android:id="@+id/action_home"
+        android:name="player.music.ancient.fragments.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/action_radio"
+        android:name="player.music.ancient.fragments.radio.RadioFragment"
+        android:label="Radio"
+        tools:layout="@layout/fragment_radio" />
+
+    <fragment
+        android:id="@+id/action_tv"
+        android:name="player.music.ancient.fragments.tv.TvFragment"
+        android:label="TV"
+        tools:layout="@layout/fragment_tv" />
+
+    <fragment
+        android:id="@+id/action_video"
+        android:name="player.music.ancient.fragments.video.VideoFragment"
+        android:label="Videos"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/action_youtube"
+        android:name="player.music.ancient.fragments.youtube.YoutubeFragment"
+        android:label="YouTube"
+        tools:layout="@layout/fragment_youtube" />
+
+    <fragment
+        android:id="@+id/action_more"
+        android:name="player.music.ancient.fragments.more.MoreFragment"
+        android:label="More"
+        tools:layout="@layout/fragment_more" />
+
+</navigation>
