@@ -25,7 +25,6 @@ import android.view.View
 import android.widget.RemoteViews
 import androidx.core.graphics.drawable.toBitmap
 import player.music.ancient.util.MaterialValueHelper
-import player.music.ancient.util.VersionUtils
 import player.music.ancient.R
 import player.music.ancient.activities.MainActivity
 import player.music.ancient.appwidgets.base.BaseAppWidget
