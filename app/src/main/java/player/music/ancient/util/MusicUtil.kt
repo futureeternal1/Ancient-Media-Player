@@ -425,13 +425,14 @@ object MusicUtil : KoinComponent {
                 if (cursor != null) {
                     // Step 1: Remove selected tracks from the current playlist, as well
                     // as from the album art cache
+                    val idsToDelete = mutableListOf<Long>()
                     cursor.moveToFirst()
                     while (!cursor.isAfterLast) {
-                        val id = cursor.getLong(BaseColumns._ID)
-                        val song: Song = songRepository.song(id)
-                        removeFromQueue(song)
+                        idsToDelete.add(cursor.getLong(BaseColumns._ID))
                         cursor.moveToNext()
                     }
+                    val songsToRemove = songs.subList(batchStart, batchEnd).filter { it.id in idsToDelete }
+                    removeFromQueue(songsToRemove)
 
                     // Step 2: Remove selected tracks from the database
                     activity.contentResolver.delete(
