@@ -1,0 +1,129 @@
+Configuration on demand is an incubating feature.
+Calculating task graph as no cached configuration is available for tasks: :app:testNormalDebugUnitTest
+
+> Configure project :app
+WARNING: The option setting 'android.usesSdkInManifest.disallowed=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.sdk.defaultTargetSdkToCompileSdkIfUnset=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.enableAppCompileTimeRClass=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.r8.optimizedResourceShrinking=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.defaults.buildfeatures.resvalues=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.nonFinalResIds=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+w: [33m[1m⚠️ Deprecated Gradle Property 'kotlin.incremental.useClasspathSnapshot' Used[0m[0m
+The `kotlin.incremental.useClasspathSnapshot` deprecated property is used in your build.
+[32m[1mSolutions:[0m[0m
+[32m • [3mIt is unsupported, please stop using it.[0m[0m
+[32m • [3mHistory based incremental compilation approach for JVM platform is removed. Kotlin Gradle plugin is now using a more efficient approach based on ABI snapshots.[0m[0m
+
+
+> Configure project :appthemehelper
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+
+> Task :app:preBuild UP-TO-DATE
+> Task :appthemehelper:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :appthemehelper:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :appthemehelper:preDebugBuild UP-TO-DATE
+> Task :app:preNormalDebugBuild UP-TO-DATE
+> Task :appthemehelper:generateDebugResValues UP-TO-DATE
+> Task :app:generateNormalDebugResValues UP-TO-DATE
+> Task :appthemehelper:processDebugNavigationResources UP-TO-DATE
+> Task :appthemehelper:generateDebugResources UP-TO-DATE
+> Task :appthemehelper:packageDebugResources UP-TO-DATE
+> Task :app:generateNormalDebugResources UP-TO-DATE
+> Task :app:packageNormalDebugResources UP-TO-DATE
+> Task :appthemehelper:parseDebugLocalResources UP-TO-DATE
+> Task :appthemehelper:generateDebugRFile UP-TO-DATE
+> Task :app:generateNormalDebugBuildConfig UP-TO-DATE
+> Task :app:generateSafeArgsNormalDebug UP-TO-DATE
+> Task :appthemehelper:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkNormalDebugAarMetadata UP-TO-DATE
+> Task :app:mapNormalDebugSourceSetPaths UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsNormalDebug UP-TO-DATE
+> Task :app:mergeNormalDebugResources UP-TO-DATE
+> Task :appthemehelper:extractDeepLinksDebug UP-TO-DATE
+> Task :app:extractDeepLinksNormalDebug UP-TO-DATE
+> Task :app:createNormalDebugCompatibleScreenManifests UP-TO-DATE
+> Task :appthemehelper:mapDebugSourceSetPaths UP-TO-DATE
+> Task :appthemehelper:processDebugManifest UP-TO-DATE
+> Task :app:processNormalDebugNavigationResources UP-TO-DATE
+> Task :appthemehelper:compileDebugLibraryResources UP-TO-DATE
+> Task :app:parseNormalDebugLocalResources UP-TO-DATE
+> Task :app:compileNormalDebugNavigationResources UP-TO-DATE
+> Task :appthemehelper:javaPreCompileDebug UP-TO-DATE
+> Task :app:processNormalDebugMainManifest UP-TO-DATE
+> Task :app:javaPreCompileNormalDebug UP-TO-DATE
+> Task :app:preNormalDebugUnitTestBuild UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesNormalDebug UP-TO-DATE
+> Task :app:processNormalDebugManifest UP-TO-DATE
+> Task :app:processNormalDebugManifestForPackage UP-TO-DATE
+> Task :app:javaPreCompileNormalDebugUnitTest UP-TO-DATE
+> Task :appthemehelper:compileDebugKotlin UP-TO-DATE
+> Task :appthemehelper:processDebugJavaRes UP-TO-DATE
+> Task :appthemehelper:compileDebugJavaWithJavac UP-TO-DATE
+> Task :appthemehelper:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :appthemehelper:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:processNormalDebugResources UP-TO-DATE
+> Task :app:kspNormalDebugKotlin UP-TO-DATE
+> Task :app:compileNormalDebugKotlin UP-TO-DATE
+> Task :app:processNormalDebugJavaRes UP-TO-DATE
+> Task :app:compileNormalDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleNormalDebugClassesToRuntimeJar UP-TO-DATE
+> Task :app:bundleNormalDebugClassesToCompileJar UP-TO-DATE
+> Task :app:kspNormalDebugUnitTestKotlin UP-TO-DATE
+> Task :app:compileNormalDebugUnitTestKotlin UP-TO-DATE
+> Task :app:compileNormalDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processNormalDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testNormalDebugUnitTest UP-TO-DATE
+
+[Incubating] Problems report is available at: file:///app/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 4s
+48 actionable tasks: 48 up-to-date
+Configuration cache entry stored.

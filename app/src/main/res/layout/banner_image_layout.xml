@@ -36,15 +36,15 @@
 
             <player.music.ancient.views.AncientShapeableImageView
                 android:id="@+id/userImage"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
                 android:scaleType="centerCrop"
                 android:transitionName="user_image"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:ancientCornerSize="21dp"
+                app:ancientCornerSize="28dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:ellipsize="end"
+                android:textAppearance="@style/Aether.Body"
                 android:text="@string/welcome"
                 android:textColor="@color/md_white_1000"
                 app:layout_constraintStart_toEndOf="@+id/userImage"
@@ -64,9 +65,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:padding="0dp"
-                android:textAppearance="@style/TextViewHeadline6"
+                android:textAppearance="@style/Aether.Headline"
                 android:textColor="@color/md_white_1000"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/userImage"
                 app:layout_constraintStart_toEndOf="@+id/userImage"
                 app:layout_constraintTop_toBottomOf="@+id/text"

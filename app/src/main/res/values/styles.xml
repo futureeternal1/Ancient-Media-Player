@@ -206,15 +206,15 @@
     <style name="HomeActionButton" parent="Widget.Material3.Button.ElevatedButton.Icon">
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">16dp</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
-        <item name="shapeAppearanceOverlay">
-            @style/ShapeAppearanceOverlay.Material3.FloatingActionButton
-        </item>
+        <item name="android:textColor">@color/aether_on_surface</item>
+        <item name="backgroundTint">@color/aether_surface_container</item>
+        <item name="iconTint">@color/aether_primary</item>
+        <item name="cornerRadius">24dp</item>
         <item name="android:minHeight">112dp</item>
         <item name="iconPadding">10dp</item>
         <item name="iconGravity">textTop</item>
         <item name="android:gravity">center</item>
-        <item name="android:textAppearance">@style/TextViewBody2</item>
+        <item name="android:textAppearance">@style/Aether.Body</item>
     </style>
 
     <style name="CarTheme" parent="Theme.AppCompat.Light.NoActionBar">

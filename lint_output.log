@@ -1,0 +1,207 @@
+Configuration on demand is an incubating feature.
+Calculating task graph as no cached configuration is available for tasks: :app:lintNormalDebug
+
+> Configure project :app
+WARNING: The option setting 'android.usesSdkInManifest.disallowed=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.sdk.defaultTargetSdkToCompileSdkIfUnset=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.enableAppCompileTimeRClass=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.r8.optimizedResourceShrinking=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.defaults.buildfeatures.resvalues=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.nonFinalResIds=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+w: [33m[1m⚠️ Deprecated Gradle Property 'kotlin.incremental.useClasspathSnapshot' Used[0m[0m
+The `kotlin.incremental.useClasspathSnapshot` deprecated property is used in your build.
+[32m[1mSolutions:[0m[0m
+[32m • [3mIt is unsupported, please stop using it.[0m[0m
+[32m • [3mHistory based incremental compilation approach for JVM platform is removed. Kotlin Gradle plugin is now using a more efficient approach based on ABI snapshots.[0m[0m
+
+
+> Configure project :appthemehelper
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints improves project import performance for very large projects. It should be enabled to improve performance.
+To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
+
+> Task :appthemehelper:preBuild UP-TO-DATE
+> Task :appthemehelper:preDebugBuild UP-TO-DATE
+> Task :appthemehelper:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :appthemehelper:mergeDebugJniLibFolders UP-TO-DATE
+> Task :appthemehelper:generateDebugResValues UP-TO-DATE
+> Task :appthemehelper:processDebugNavigationResources UP-TO-DATE
+> Task :appthemehelper:generateDebugAssets UP-TO-DATE
+> Task :appthemehelper:generateDebugResources UP-TO-DATE
+> Task :appthemehelper:mergeDebugNativeLibs NO-SOURCE
+> Task :appthemehelper:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :appthemehelper:stripDebugDebugSymbols NO-SOURCE
+> Task :appthemehelper:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :appthemehelper:packageDebugResources UP-TO-DATE
+> Task :appthemehelper:javaPreCompileDebug UP-TO-DATE
+> Task :appthemehelper:mergeDebugAssets UP-TO-DATE
+> Task :appthemehelper:prepareDebugArtProfile UP-TO-DATE
+> Task :appthemehelper:prepareLintJarForPublish UP-TO-DATE
+> Task :appthemehelper:writeDebugAarMetadata UP-TO-DATE
+> Task :appthemehelper:parseDebugLocalResources UP-TO-DATE
+> Task :appthemehelper:processDebugManifest UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preNormalDebugBuild UP-TO-DATE
+> Task :appthemehelper:generateDebugRFile UP-TO-DATE
+> Task :appthemehelper:extractDeepLinksDebug UP-TO-DATE
+> Task :app:generateNormalDebugResValues UP-TO-DATE
+> Task :app:generateNormalDebugResources UP-TO-DATE
+> Task :appthemehelper:compileDebugKotlin UP-TO-DATE
+> Task :appthemehelper:extractDebugAnnotations UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsNormalDebug UP-TO-DATE
+> Task :app:mergeNormalDebugResources UP-TO-DATE
+> Task :appthemehelper:processDebugJavaRes UP-TO-DATE
+> Task :appthemehelper:compileDebugJavaWithJavac UP-TO-DATE
+> Task :appthemehelper:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :appthemehelper:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :appthemehelper:mergeDebugJavaResource UP-TO-DATE
+> Task :appthemehelper:syncDebugLibJars UP-TO-DATE
+> Task :app:generateNormalDebugBuildConfig UP-TO-DATE
+> Task :app:generateSafeArgsNormalDebug UP-TO-DATE
+> Task :app:packageNormalDebugResources UP-TO-DATE
+> Task :app:checkNormalDebugAarMetadata UP-TO-DATE
+> Task :app:mapNormalDebugSourceSetPaths UP-TO-DATE
+> Task :app:createNormalDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksNormalDebug UP-TO-DATE
+> Task :appthemehelper:mapDebugSourceSetPaths UP-TO-DATE
+> Task :appthemehelper:compileDebugLibraryResources UP-TO-DATE
+> Task :appthemehelper:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:processNormalDebugMainManifest UP-TO-DATE
+> Task :app:javaPreCompileNormalDebug UP-TO-DATE
+> Task :app:preNormalDebugAndroidTestBuild SKIPPED
+> Task :app:processNormalDebugManifest UP-TO-DATE
+> Task :app:generateNormalDebugAndroidTestResValues UP-TO-DATE
+> Task :app:processNormalDebugManifestForPackage UP-TO-DATE
+> Task :app:processNormalDebugNavigationResources UP-TO-DATE
+> Task :appthemehelper:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :appthemehelper:writeDebugLintModelMetadata UP-TO-DATE
+> Task :app:parseNormalDebugLocalResources UP-TO-DATE
+> Task :app:compileNormalDebugNavigationResources UP-TO-DATE
+> Task :appthemehelper:createFullJarDebug UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :appthemehelper:extractProguardFiles UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesNormalDebug UP-TO-DATE
+> Task :app:preNormalDebugUnitTestBuild UP-TO-DATE
+> Task :app:processNormalDebugResources UP-TO-DATE
+> Task :app:kspNormalDebugKotlin UP-TO-DATE
+> Task :appthemehelper:checkDebugAarMetadata UP-TO-DATE
+> Task :appthemehelper:bundleDebugLocalLintAar UP-TO-DATE
+> Task :appthemehelper:lintAnalyzeDebug UP-TO-DATE
+> Task :appthemehelper:preDebugAndroidTestBuild UP-TO-DATE
+> Task :appthemehelper:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :appthemehelper:preDebugUnitTestBuild UP-TO-DATE
+> Task :appthemehelper:generateDebugLintModel UP-TO-DATE
+> Task :appthemehelper:generateDebugAndroidTestLintModel UP-TO-DATE
+> Task :appthemehelper:generateDebugUnitTestLintModel UP-TO-DATE
+> Task :app:compileNormalDebugKotlin UP-TO-DATE
+> Task :appthemehelper:lintAnalyzeDebugAndroidTest UP-TO-DATE
+> Task :app:compileNormalDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleNormalDebugClassesToCompileJar UP-TO-DATE
+> Task :appthemehelper:lintAnalyzeDebugUnitTest UP-TO-DATE
+> Task :app:generateNormalDebugAndroidTestLintModel UP-TO-DATE
+> Task :app:lintAnalyzeNormalDebugAndroidTest UP-TO-DATE
+> Task :app:generateNormalDebugUnitTestLintModel UP-TO-DATE
+> Task :app:generateNormalDebugLintReportModel UP-TO-DATE
+> Task :app:lintAnalyzeNormalDebugUnitTest UP-TO-DATE
+> Task :app:lintAnalyzeNormalDebug
+
+> Task :app:lintReportNormalDebug
+Wrote HTML report to file:///app/app/build/reports/lint-results-normalDebug.html
+Lint found 32 errors, 801 warnings and 8 hints. First failure:
+/app/app/src/main/java/player/music/ancient/activities/VideoPlayerActivity.kt:417: Error: Call requires API level 26 (current min is 24): android.app.PictureInPictureParams.Builder() [NewApi]
+        val builder = PictureInPictureParams.Builder()
+                                             ~~~~~~~
+
+
+> Task :app:lintNormalDebug FAILED
+Lint found 32 errors, 801 warnings, 8 hints. First failure:
+
+/app/app/src/main/java/player/music/ancient/activities/VideoPlayerActivity.kt:417: Error: Call requires API level 26 (current min is 24): android.app.PictureInPictureParams.Builder() [NewApi]
+        val builder = PictureInPictureParams.Builder()
+                                             ~~~~~~~
+
+The full lint text report is located at:
+  /app/app/build/intermediates/lint_intermediate_text_report/normalDebug/lintReportNormalDebug/lint-results-normalDebug.txt
+
+[Incubating] Problems report is available at: file:///app/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lintNormalDebug'.
+> Lint found errors in the project; aborting build.
+
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+
+  Lint found 32 errors, 801 warnings, 8 hints. First failure:
+
+  /app/app/src/main/java/player/music/ancient/activities/VideoPlayerActivity.kt:417: Error: Call requires API level 26 (current min is 24): android.app.PictureInPictureParams.Builder() [NewApi]
+          val builder = PictureInPictureParams.Builder()
+                                               ~~~~~~~
+
+  The full lint text report is located at:
+    /app/app/build/intermediates/lint_intermediate_text_report/normalDebug/lintReportNormalDebug/lint-results-normalDebug.txt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1m 27s
+74 actionable tasks: 3 executed, 71 up-to-date
+Configuration cache entry stored.
