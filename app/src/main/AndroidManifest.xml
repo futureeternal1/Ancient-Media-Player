@@ -48,7 +48,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AncientMusic.FollowSystem"
-        android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
