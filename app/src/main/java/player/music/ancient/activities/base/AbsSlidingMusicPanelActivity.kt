@@ -62,7 +62,6 @@ import player.music.ancient.extensions.isColorLight
 import player.music.ancient.extensions.isLandscape
 import player.music.ancient.extensions.keepScreenOn
 import player.music.ancient.extensions.maybeSetScreenOn
-import player.music.ancient.extensions.peekHeightAnimate
 import player.music.ancient.extensions.setLightNavigationBar
 import player.music.ancient.extensions.setLightNavigationBarAuto
 import player.music.ancient.extensions.setLightStatusBar
