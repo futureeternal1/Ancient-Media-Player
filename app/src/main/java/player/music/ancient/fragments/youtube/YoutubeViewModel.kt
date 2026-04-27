@@ -160,99 +160,122 @@ class YoutubeViewModel(
         }
 
         feedJob = viewModelScope.launch(IO) {
-            val currentState = _uiState.value ?: YoutubeFeedUiState()
-
-            _uiState.postValue(
-                if (cachedVideos.isEmpty()) {
-                    YoutubeFeedUiState(isInitialLoading = true)
-                } else {
-                    currentState.copy(
-                        videos = cachedVideos,
-                        isInitialLoading = false,
-                        isRefreshing = true,
-                        placeholder = null
-                    )
-                }
-            )
-
-            try {
-                PreferenceUtil.youtubeFeedLastAttemptAt = System.currentTimeMillis()
-                PreferenceUtil.youtubeFeedSyncSignature = trackedSignature.orEmpty()
-
-                if (BuildConfig.YOUTUBE_API_KEY.contains("missing", ignoreCase = true)) {
-                    throw YoutubeFeedException.Configuration
-                }
-
-                repository.pruneCachedYoutubeVideos(trackedChannels.map { it.id })
-
-                val allVideos = mutableListOf<YoutubeFeedVideo>()
-                var successfulChannelCount = 0
-                var resolvedFailures = 0
-
-                for (channel in trackedChannels) {
-                    val channelId = resolveChannelId(channel)
-                    if (channelId == null) {
-                        resolvedFailures++
-                        repository.replaceCachedYoutubeVideos(channel.id, emptyList())
-                        continue
-                    }
-
-                    val response = apiService.searchVideos(
-                        channelId = channelId,
-                        apiKey = BuildConfig.YOUTUBE_API_KEY
-                    )
-                    val cachedEntities = response.items.orEmpty()
-                        .map { it.toCachedEntity(channel.id, channelId) }
-                    repository.replaceCachedYoutubeVideos(channel.id, cachedEntities)
-                    allVideos += cachedEntities.map(YoutubeVideoEntity::toFeedVideo)
-                    successfulChannelCount++
-                }
-
-                allVideos.sortByDescending { it.publishedAt }
-
-                if (successfulChannelCount == 0 && resolvedFailures > 0) {
-                    throw YoutubeFeedException.ChannelResolution
-                }
-
-                _uiState.postValue(
-                    if (allVideos.isEmpty()) {
-                        YoutubeFeedUiState(
-                            placeholder = YoutubePlaceholderState(
-                                kind = YoutubePlaceholderKind.EMPTY_FEED,
-                                action = YoutubePlaceholderAction.RETRY
-                            )
-                        )
-                    } else {
-                        YoutubeFeedUiState(videos = allVideos)
-                    }
-                )
-
-                PreferenceUtil.youtubeFeedLastSyncAt = System.currentTimeMillis()
-                PreferenceUtil.youtubeFeedSyncSignature = trackedSignature.orEmpty()
-                PreferenceUtil.youtubeFeedLastFailureKind = ""
-
-                if (resolvedFailures > 0 && allVideos.isNotEmpty()) {
-                    _messages.emit(
-                        YoutubePlaceholderState(
-                            kind = YoutubePlaceholderKind.CHANNEL_RESOLUTION_ERROR,
-                            action = YoutubePlaceholderAction.RETRY
-                        )
-                    )
-                }
-            } catch (exception: Exception) {
-                if (exception is CancellationException) {
-                    throw exception
-                }
-                PreferenceUtil.youtubeFeedLastFailureKind =
-                    exception.toPlaceholderState().kind.name
-                PreferenceUtil.youtubeFeedSyncSignature = trackedSignature.orEmpty()
-                handleFeedFailure(
-                    throwable = exception,
-                    cachedVideos = cachedVideosSnapshot.ifEmpty { cachedVideos }
-                )
-            }
+            executeFeedRefresh(cachedVideos)
         }
     }
+
+    private suspend fun executeFeedRefresh(cachedVideos: List<YoutubeFeedVideo>) {
+        setInitialLoadingState(cachedVideos)
+
+        try {
+            PreferenceUtil.youtubeFeedLastAttemptAt = System.currentTimeMillis()
+            PreferenceUtil.youtubeFeedSyncSignature = trackedSignature.orEmpty()
+
+            if (BuildConfig.YOUTUBE_API_KEY.contains("missing", ignoreCase = true)) {
+                throw YoutubeFeedException.Configuration
+            }
+
+            val result = fetchAndCacheVideos()
+
+            if (result.successfulChannelCount == 0 && result.resolvedFailures > 0) {
+                throw YoutubeFeedException.ChannelResolution
+            }
+
+            handleFeedSuccess(result.videos, result.resolvedFailures)
+
+        } catch (exception: Exception) {
+            if (exception is CancellationException) {
+                throw exception
+            }
+            PreferenceUtil.youtubeFeedLastFailureKind =
+                exception.toPlaceholderState().kind.name
+            PreferenceUtil.youtubeFeedSyncSignature = trackedSignature.orEmpty()
+            handleFeedFailure(
+                throwable = exception,
+                cachedVideos = cachedVideosSnapshot.ifEmpty { cachedVideos }
+            )
+        }
+    }
+
+    private fun setInitialLoadingState(cachedVideos: List<YoutubeFeedVideo>) {
+        val currentState = _uiState.value ?: YoutubeFeedUiState()
+        _uiState.postValue(
+            if (cachedVideos.isEmpty()) {
+                YoutubeFeedUiState(isInitialLoading = true)
+            } else {
+                currentState.copy(
+                    videos = cachedVideos,
+                    isInitialLoading = false,
+                    isRefreshing = true,
+                    placeholder = null
+                )
+            }
+        )
+    }
+
+    private suspend fun fetchAndCacheVideos(): SyncResult {
+        repository.pruneCachedYoutubeVideos(trackedChannels.map { it.id })
+
+        val allVideos = mutableListOf<YoutubeFeedVideo>()
+        var successfulChannelCount = 0
+        var resolvedFailures = 0
+
+        for (channel in trackedChannels) {
+            val channelId = resolveChannelId(channel)
+            if (channelId == null) {
+                resolvedFailures++
+                repository.replaceCachedYoutubeVideos(channel.id, emptyList())
+                continue
+            }
+
+            val response = apiService.searchVideos(
+                channelId = channelId,
+                apiKey = BuildConfig.YOUTUBE_API_KEY
+            )
+            val cachedEntities = response.items.orEmpty()
+                .map { it.toCachedEntity(channel.id, channelId) }
+            repository.replaceCachedYoutubeVideos(channel.id, cachedEntities)
+            allVideos += cachedEntities.map(YoutubeVideoEntity::toFeedVideo)
+            successfulChannelCount++
+        }
+
+        allVideos.sortByDescending { it.publishedAt }
+        return SyncResult(allVideos, successfulChannelCount, resolvedFailures)
+    }
+
+    private suspend fun handleFeedSuccess(allVideos: List<YoutubeFeedVideo>, resolvedFailures: Int) {
+        _uiState.postValue(
+            if (allVideos.isEmpty()) {
+                YoutubeFeedUiState(
+                    placeholder = YoutubePlaceholderState(
+                        kind = YoutubePlaceholderKind.EMPTY_FEED,
+                        action = YoutubePlaceholderAction.RETRY
+                    )
+                )
+            } else {
+                YoutubeFeedUiState(videos = allVideos)
+            }
+        )
+
+        PreferenceUtil.youtubeFeedLastSyncAt = System.currentTimeMillis()
+        PreferenceUtil.youtubeFeedSyncSignature = trackedSignature.orEmpty()
+        PreferenceUtil.youtubeFeedLastFailureKind = ""
+
+        if (resolvedFailures > 0 && allVideos.isNotEmpty()) {
+            _messages.emit(
+                YoutubePlaceholderState(
+                    kind = YoutubePlaceholderKind.CHANNEL_RESOLUTION_ERROR,
+                    action = YoutubePlaceholderAction.RETRY
+                )
+            )
+        }
+    }
+
+    private data class SyncResult(
+        val videos: List<YoutubeFeedVideo>,
+        val successfulChannelCount: Int,
+        val resolvedFailures: Int
+    )
 
     fun insertYoutubeChannel(channel: YoutubeChannelEntity) {
         viewModelScope.launch(IO) {
